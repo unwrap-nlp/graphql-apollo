@@ -13,7 +13,7 @@ export class Recipe {
     return this.description;
   }
 
-  @Field({
+  @Field((type) => String, {
     nullable: true,
     description: "The recipe description with preparation info",
   })
@@ -22,7 +22,7 @@ export class Recipe {
   @Field((type) => [Int])
   ratings: number[];
 
-  @Field()
+  @Field((type) => Date)
   creationDate: Date;
 
   @Field((type) => Int)
